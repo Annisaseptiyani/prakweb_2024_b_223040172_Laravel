@@ -9,10 +9,10 @@
           <div class="hidden md:block">
             <div class="ml-10 flex items-baseline space-x-4">
               <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-              <x-nav-link href="/" :active="request()->is('/')">Home</x-nav-link>
-              <x-nav-link href="/blog" :active="request()->is('blog')">Blog</x-nav-link>
-              <x-nav-link href="/about" :active="request()->is('about')">About</x-nav-link>
-              <x-nav-link href="/contact" :active="request()->is('contact')">Contact</x-nav-link>
+              <x-navlink href="/" :active="request()->is('/')">Home</x-navlink>
+              <x-navlink href="/posts" :active="request()->is('posts')">Blog</x-navlink>
+              <x-navlink href="/about" :active="request()->is('about')">About</x-navlink>
+              <x-navlink href="/contact" :active="request()->is('contact')">Contact</x-navlink>
 
             </div>
           </div>
@@ -30,7 +30,7 @@
             <!-- Profile dropdown -->
             <div class="relative ml-3">
               <div>
-                <button type="button"type="button" @click="isOpen = !isOpen"class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
+                <button type="button"type="button" @click="isOpen = !isOpen" class="relative flex max-w-xs items-center rounded-full bg-gray-800 text-sm focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-800" id="user-menu-button" aria-expanded="false" aria-haspopup="true">
                   <span class="absolute -inset-1.5"></span>
                   <span class="sr-only">Open user menu</span>
                   <img class="size-8 rounded-full" 
@@ -79,7 +79,7 @@
     <div x-show="osOpen" class="md:hidden" id="mobile-menu">
       <div class="space-y-1 px-2 pb-3 pt-2 sm:px-3">
         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-        <a href="/" class= "{{ request()-> is('/') ? 'bg-gray-900 text-white' 'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
+        <a href="/" class= "{{ request()->is('/') ? 'bg-gray-900 text-white' :'text-gray-300 hover:bg-gray-700 hover:text-white'}} rounded px-3 py-2 text-base font-medium text-white" aria-current="page">Home</a>
         <a href="/blog" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Blog</a>
         <a href="/about" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">About</a>
         <a href="/contact" class="block rounded-md px-3 py-2 text-base font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Contact</a>
