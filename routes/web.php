@@ -19,19 +19,10 @@ Route::get('/posts', function () {
     return view('posts',['title'=>'Blog','posts'=>Post::all()]);
 });
 
-Route::get('/post/{slug}', function($slug){
-    $posts = [
-        [
-        'id'=> 1,
-        'slug' => 'judul-artikel-1',
-        'title' => 'Judul Artikel 1',
-        'author' => 'Annisa septiyani',
-        'body' => 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minus dignissimos praesentium 
-    nisi eum quia voluptatibus ab vel ad cum. Vero, adipisci dolorem exercitationem esse illum 
-    aliquid labore nobis ea. Impedit.'
-    ]];
-    $posts = Post::find($slug);
-return view('posts',['title' => 'Single Post', 'posts' => $posts]);
+Route::get('/posts/{post:slug}', function(Post$post){
+    
+
+return view('posts',['title' => 'Single Post', 'posts' => $post]);
 
 });
 
