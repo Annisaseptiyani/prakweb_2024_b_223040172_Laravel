@@ -15,5 +15,7 @@ class Post extends Model
         return $this->belongsTo(User::class); // Assuming User model has a 'id' column for foreign key
     }
 
-
+public function category():BelongsTo{
+    return $this->belongsTo(Category::class); // Assuming Category model has a 'id' column for foreign key
+}
 }
