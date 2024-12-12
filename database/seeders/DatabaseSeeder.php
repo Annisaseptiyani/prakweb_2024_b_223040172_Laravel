@@ -29,7 +29,7 @@ class DatabaseSeeder extends Seeder
         // Category::create([
         //     'name' => 'Web Design',
         //     'slug' => 'web-design',
-        // ]);
+        // ]);`
 
         // Post::created([
         //     'title' => 'Judul Artikel 1',

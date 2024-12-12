@@ -1,10 +1,12 @@
 <?php
 
-use App\Models\Category;
+use App\Http\Controllers\BlogController;
 use App\Models\Post;
 use App\Models\User;
+use App\Models\Category;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Route;
+
 
 
 
@@ -19,9 +21,13 @@ Route::get('/about', function () {
 
 
 Route::get('/posts', function () {
-    //$posts = Post::with(['author','category'])->latest()->get();
-    $posts = Post::latest()->get();
-    return view('posts',['title'=>'Blog','posts'=> $posts]);
+    $posts = Post::latest();
+    if(request('search')){
+
+    }
+
+    
+    return view('posts',['title'=>'Blog','posts'=> $posts->get()]);
 });
 
 Route::get('/posts/{post:slug}', function(Post$post){
@@ -50,4 +56,7 @@ Route::get('/authors/{user:username}', function(User $user){
 
 Route::get('/contact', function () {
     return view('contact',['title'=>'Contact']);
+
+    Route::resource('blogs',BlogController::class);
 });
+
